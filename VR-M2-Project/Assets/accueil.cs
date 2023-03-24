@@ -8,18 +8,41 @@ public class accueil : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ShowMenu1();
+        ShowAccueil();
     }
 
-    public GameObject menu1;
-    public GameObject menu2;
-
-    public void ShowMenu1()
-        {
-            menu1.SetActive(true);
-            menu2.SetActive(false);
-        }
+    public GameObject panel_accueil;
+    public GameObject panel_credits;
     
+    public void ShowAccueil()
+        {
+            panel_accueil.SetActive(true);
+            panel_credits.SetActive(false);
+        }
+
+    public void ShowCredits()
+        {
+            panel_accueil.SetActive(false);
+            panel_credits.SetActive(true);
+        }
+
+    public void ShowSeisme()
+        {
+            panel_accueil.SetActive(false);
+            panel_credits.SetActive(false);
+            LoadSeisme();
+        }
+
+    public void LoadAccueil(){
+        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+        ShowAccueil();
+    }
+
+    public void LoadSeisme(){
+        SceneManager.LoadScene("Main", LoadSceneMode.Single);
+    }
+
+    // Update is called once per frame
     void Update()
     {
         

@@ -53,7 +53,7 @@ public class MeshDestroy : MonoBehaviour
             for (var i = 0; i < parts.Count; i++)
             {
                 var bounds = parts[i].Bounds;
-                bounds.Expand(0.5f); // "0.5f" -> f = float, preciser que 0.5 est un float
+                bounds.Expand(0.5f);
 
                 var plane = new Plane(UnityEngine.Random.onUnitSphere, new Vector3(UnityEngine.Random.Range(bounds.min.x, bounds.max.x),
                                                                                    UnityEngine.Random.Range(bounds.min.y, bounds.max.y),
